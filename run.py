@@ -36,7 +36,7 @@ def checkMaxList(driver):
     html_source = driver3.page_source
     soup = BeautifulSoup(html_source, 'lxml')
     userId = soup.select('yt-live-chat-author-chip > span#author-name ')
-    if len(userId) > 50:
+    if len(userId) > 200:
         driver3.switch_to_default_content()
         driver3.find_element_by_xpath("//*[@id='ytd-player']").click()
         print('userId 갯수 : ', len(userId))
